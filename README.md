@@ -1,6 +1,6 @@
 # This a repo for doing an animated sankey in R (ggplot/gganimate)
 
-## Here it is: 
+Here it is: 
 
 <p align="center">
   <img src="sankey_animation.gif">
