@@ -209,13 +209,13 @@ bar_data <- bar_data %>%
 
 # custom colors so plots can be added together with different aes mappings
 bar_data <- bar_data %>% 
-  mutate(color_col=ifelse(status=="y1a_count","grey30", # 
-                   ifelse(status=="y1b_count","grey35",
-                   ifelse(status=="y1c_count","grey40",
-                   ifelse(status=="y1d_count","grey45",
-                   ifelse(status=="y1e_count","grey50",
-                   ifelse(status=="y1f_count","grey55",
-                   ifelse(status=="y1g_count","grey60","grey65")))))))
+  mutate(color_col=ifelse(status=="y1a_count","#FFC0CB", # 
+                   ifelse(status=="y1b_count","#FFC7D1",
+                   ifelse(status=="y1c_count","#FFCFD8",
+                   ifelse(status=="y1d_count","#FFD7DE",
+                   ifelse(status=="y1e_count","#FFDFE5",
+                   ifelse(status=="y1f_count","#FFE7EB",
+                   ifelse(status=="y1g_count","#FFEFF2","orange")))))))
   )
 
 # impute all of the <[n_scatter_coords] rows on bar_data to match point_data 
@@ -281,14 +281,14 @@ label_rects <- tibble(
     animated_sankey_master_list$left_statuses_y$y1h+y_adjust_val
   ),
   color = c(
-    "grey30",
-    "grey35",
-    "grey40",
-    "grey45",
-    "grey50",
-    "grey55",
-    "grey60",
-    "grey65"
+    "#FFC0CB",
+    "#FFC7D1",
+    "#FFCFD8",
+    "#FFD7DE",
+    "#FFDFE5",
+    "#FFE7EB",
+    "#FFEFF2",
+    "orange"
     )
 )
 
@@ -335,8 +335,8 @@ annotation_data <- tibble(
   ),
   family="Calibri",
   color = c(
-    rep("white",8),
-    c("mediumpurple4","mediumpurple3","mediumpurple2")
+    rep("black",8),
+    c("blue4","blue2","blue")
   )
 )
 
@@ -423,7 +423,7 @@ animp <- ggplot(point_data, aes(x,y)) +
       #plot.background = element_rect(fill='black')
     ) + 
     ggtitle(label = "Year 1 -> Year 2 Status Changes",
-            subtitle = "(!this is all dummy data!)") +
+            subtitle = "(!with dummy data!)") +
     ### the below will convert this into an animation rather than static plot
     transition_time(frame) +
     enter_fade() +
@@ -447,12 +447,12 @@ animator <- animate(
 
 #animator
 
-# anim_save(
-#   
-#   filename = "sankey_animation.gif",
-#   animation = animator
-#   
-# )
+anim_save(
+
+  filename = "sankey_animation.gif",
+  animation = animator
+
+)
 
 #TODO
 #-add buffer in between statuses (if requested)

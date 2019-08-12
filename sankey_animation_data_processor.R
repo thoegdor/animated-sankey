@@ -24,16 +24,7 @@ left_pos_tib <- tibble(
     rep("Y1 Status G",3),
     rep("Y1 Status H",3)
   ),
-  y2=c(
-    y2_strings,
-    y2_strings,
-    y2_strings,
-    y2_strings,
-    y2_strings,
-    y2_strings,
-    y2_strings,
-    y2_strings
-  ),
+  y2=rep(y2_strings,8),
   from=c(
     rep(8.0,3),
     rep(7.0,3),
@@ -44,16 +35,7 @@ left_pos_tib <- tibble(
     rep(2.0,3),
     rep(1.0,3)
   ),
-  to=c(
-    y2_ints,
-    y2_ints,
-    y2_ints,
-    y2_ints,
-    y2_ints,
-    y2_ints,
-    y2_ints,
-    y2_ints
-  )
+  to=rep(y2_ints,8)
 )
 
 tib <- merge(
